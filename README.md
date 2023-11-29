@@ -22,7 +22,7 @@ VOLTHA encompass multiple components that work together to manage OLT devices. S
 To deploy a VOLTHA stack with the opensource adapters (OpenOLT and OpenONU) you can use the `voltha-stack` chart:
 ```
 helm upgrade --install --create-namespace \
--n voltha voltha /home/cruel/voltha-helm-charts/voltha-stack \
+-n voltha voltha voltha-helm-charts/voltha-stack \
 --set global.stack_name=voltha \
 --set global.voltha_infra_name=voltha-infra \
 --set global.voltha_infra_namespace=infra
