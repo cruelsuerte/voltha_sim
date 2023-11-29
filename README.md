@@ -1,5 +1,5 @@
 # Voltha Environment Simulation
-This repository defines Kubernetes Helm charts that can be used to deploy a VOLTHA instance and use VOLTHA APIs.
+This repository defines Kubernetes Helm charts that can be used to deploy a VOLTHA instance and interact with VOLTHA APIs.
 
 ### Prerequisites
 minikube https://minikube.sigs.k8s.io/docs/start/ \
