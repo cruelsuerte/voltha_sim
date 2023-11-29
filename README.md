@@ -62,6 +62,12 @@ Expose Voltha API:
 ```
 kubectl -n voltha port-forward svc/voltha-voltha-api 55555
 ```
+If you are exposing the voltha-api service on 127.0.0.1:55555 there is no need to configure `voltctl`, if you are exposing the service on a different port/IP you configure `voltctl` with:
+```
+mkdir ~/.volt/
+voltctl -s 127.0.0.1:55555 config > $HOME/.volt/config
+```
+Then, you have to modify $HOME/.volt/config file.
 ## Provisioning an OLT
 To create and enable the OLT device in VOLTHA you can use these `voltctl` commands:
 ```
