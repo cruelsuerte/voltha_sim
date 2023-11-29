@@ -1,0 +1,85 @@
+# Copyright 2020-2023 Open Networking Foundation (ONF) and the ONF Contributors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+
+global:
+  stack_name: voltha
+  log_level: "WARN"
+  voltha_infra_name: "voltha-infra"
+  voltha_infra_namespace: "infra"
+  core_endpoint: "{{ .Release.Name }}-voltha-core.{{ .Release.Namespace }}.svc:55558"
+  log_correlation:
+    enabled: true
+  tracing:
+    enabled: false
+
+voltha:
+  enabled: true
+  onos_classic:
+    onosOfPort: 6653
+    replicas: 1
+  ingress:
+    enabled: false
+    enableVirtualHosts: false
+  rw_core:
+    kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
+    stack_id: "{{ .Values.global.stack_name }}"
+  ofagent:
+    kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
+    stack_id: "{{ .Values.global.stack_name }}"
+  services:
+    kafka:
+      cluster:
+        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
+    etcd:
+      address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
+    tracing_agent:
+      address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
+
+voltha-adapter-openonu:
+  enabled: true
+  adapter_open_onu:
+    kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
+    endpoints:
+      address: '{{ .Release.Name }}-voltha-adapter-openonu-api'
+  services:
+    kafka:
+      cluster:
+        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
+    etcd:
+      address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
+    tracing_agent:
+      address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
+
+voltha-adapter-openolt:
+  enabled: true
+  adapter_open_olt:
+    kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
+    endpoints:
+      address: '{{ .Release.Name }}-voltha-adapter-openolt-api'
+  services:
+    kafka:
+      cluster:
+        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
+    etcd:
+      address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
+    tracing_agent:
+      address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
+
+voltha-go-controller:
+  enabled: false
+  services:
+     kafka:
+       cluster:
+         address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"

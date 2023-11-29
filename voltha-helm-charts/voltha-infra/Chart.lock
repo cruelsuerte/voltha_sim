@@ -1,0 +1,33 @@
+dependencies:
+- name: onos-classic
+  repository: https://charts.onosproject.org
+  version: 0.1.29
+- name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 17.0.10
+- name: bbsim-sadis-server
+  repository: file://../bbsim-sadis-server
+  version: 0.3.3
+- name: etcd
+  repository: https://charts.bitnami.com/bitnami
+  version: 8.5.11
+- name: kafka
+  repository: https://charts.bitnami.com/bitnami
+  version: 20.0.2
+- name: freeradius
+  repository: https://charts.opencord.org
+  version: 1.0.2
+- name: voltha-tracing
+  repository: file://../voltha-tracing
+  version: 2.12.0
+- name: elasticsearch
+  repository: https://helm.elastic.co
+  version: 7.10.1
+- name: kibana
+  repository: https://helm.elastic.co
+  version: 7.10.1
+- name: fluentd-elasticsearch
+  repository: https://kiwigrid.github.io
+  version: 9.6.2
+digest: sha256:2cccf86313ec5c21c8589b398f1fa6f22e9362ec4ce9bfed2b061b42e3b98340
+generated: "2023-11-24T12:43:29.041724871+01:00"
