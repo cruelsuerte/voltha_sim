@@ -1,14 +1,9 @@
 # Voltha Environment Simulation
-This repository defines Kubernetes Helm charts that can be used to deploy a VOLTHA instance.
+This repository defines Kubernetes Helm charts that can be used to deploy a VOLTHA instance and use VOLTHA APIs.
 
 ### Prerequisites
 minikube https://minikube.sigs.k8s.io/docs/start/ \
 helm https://helm.sh/docs/intro/install/
-
-### References
-https://docs.voltha.org/voltha-2.9/voltha-helm-charts/README.html \
-https://docs.voltha.org/voltha-2.9/voltha-protos/README.html \
-https://gerrit.opencord.org/plugins/gitiles/voltha/+/e0d53f8301eab8f38ccc042bf9d2eb49f4d6e430/voltha/protos/voltha.proto
 
 ## Deploy Voltha
 Open a terminal in the project folder. \
@@ -79,3 +74,8 @@ To use Votha Python protobufs and gRPC stubs and interact with Voltha APIs, firs
 pip install voltha-protos
 ```
 Python script `test.py` is a demo client that can be used as a reference/starting point.
+
+## References
+https://docs.voltha.org/voltha-2.9/voltha-helm-charts/README.html \
+https://docs.voltha.org/voltha-2.9/voltha-protos/README.html \
+https://gerrit.opencord.org/plugins/gitiles/voltha/+/e0d53f8301eab8f38ccc042bf9d2eb49f4d6e430/voltha/protos/voltha.proto
