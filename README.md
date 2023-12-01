@@ -75,7 +75,7 @@ voltctl device create -t openolt -H bbsim0.voltha.svc:50060
 voltctl device list --filter Type~openolt -q | xargs voltctl device enable
 ```
 ## Voltha client
-To use Votha Python protobufs and gRPC stubs and interact with Voltha APIs, first install the dependencies:
+To use Voltha Python protobufs and gRPC stubs and interact with Voltha APIs, first install the dependencies:
 ```
 pip install voltha-protos
 ```
