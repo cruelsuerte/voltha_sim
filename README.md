@@ -79,7 +79,7 @@ To use Voltha Python protobufs and gRPC stubs and interact with Voltha APIs, fir
 ```
 pip install voltha-protos
 ```
-Python script `test.py` is a demo client that can be used as a reference/starting point.
+Python script `voltha_client.py` is a demo client that can be used as a reference/starting point.
 
 ## References
 https://docs.voltha.org/voltha-2.9/voltha-helm-charts/README.html \
