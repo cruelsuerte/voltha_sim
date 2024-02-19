@@ -14,6 +14,10 @@ Minikube consente di abilitare un Ingress e un servizio DNS per la risoluzione d
 minikube addons enable ingress
 minikube addons enable ingress-dns
 ```
+Affinché l'indirizzo del cluster sia raggiungibile tramite l'interfaccia Host-only della VM da parte della macchina host o altre VMs, eseguire il comando:
+```
+sudo ip route add 192.168.50.0/24 via <VM-address>
+```
 ## Distribuzione di un servizio
 Le API Kubernetes sono esposte alla porta 8443 dell'indirizzo assegnato al cluster, visualizzabile con il comando `minikube ip`. \
 Attraverso lo strumento `kubectl`, è possibile interagire da remoto con le API per la gestione delle risorse del cluster.
