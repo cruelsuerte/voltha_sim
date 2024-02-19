@@ -54,7 +54,7 @@ Per rendere accessibile l'applicazione web attraverso un nome di dominio, è nec
 kubectl apply -f ~/kube_client/hello-ingress.yaml -n application --kubeconfig ~/kube_client/config_remote
 ```
 Il comando `nslookup hello.app <minikube-ip>` consente di verificare che il cluster risponda correttamente alle query DNS. \
-I passaggi per configurare l'indirizzo IP del cluster come indirizzo del server DNS fanno riferimento alla guida [Ingress DNS | minikube](https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/). \
+I passaggi per configurare l'indirizzo IP del cluster come indirizzo del server DNS fanno riferimento alla guida [Ingress DNS | minikube](https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/) . \
 È necessario modificare il file `/etc/resolvconf/resolv.conf.d/head` inserendo:
 ```
 search app
