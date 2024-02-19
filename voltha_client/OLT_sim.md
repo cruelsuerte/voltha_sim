@@ -1,5 +1,5 @@
 # Simulazione OLT
-Il documento descrive i passaggi per la simulazione di un OLT remoto registrato con Voltha
+Il documento descrive i passaggi per la simulazione di un OLT remoto registrato con Voltha.
 
 ### Prerequisites
 [docker](https://docs.docker.com/engine/install/ubuntu/)
