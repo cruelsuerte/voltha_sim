@@ -68,4 +68,4 @@ Hello, world!
 Version: 1.0.0
 Hostname: hello-server-5f8d66645-chhw9
 ```
-Le operazioni possono essere riprodotte utilizzando lo script Python kube_client_create.py, in grado di interagire con le APIs di Kubernetes grazie alla libreria [Kubernetes Client](https://github.com/kubernetes-client/python).
+Le operazioni possono essere riprodotte utilizzando lo script Python kube_client_create.py, in grado di interagire con le APIs di Kubernetes grazie alla libreria [Kubernetes Client](https://github.com/kubernetes-client/python) .
