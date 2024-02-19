@@ -60,7 +60,7 @@ kubectl -n infra port-forward --address 0.0.0.0 svc/voltha-infra-onos-classic-hs
 ```
 Expose Voltha API:
 ```
-kubectl -n voltha port-forward svc/voltha-voltha-api 55555
+kubectl -n voltha port-forward --address 0.0.0.0 svc/voltha-voltha-api 55555:55555
 ```
 If you are exposing the voltha-api service on 127.0.0.1:55555 there is no need to configure `voltctl`, if you are exposing the service on a different port/IP you configure `voltctl` with:
 ```
