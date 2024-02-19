@@ -61,7 +61,7 @@ search app
 nameserver <minikube-ip>
 timeout 5
 ```
-In questo modo, l'applicazione è accessibile da remoto all'indirizzo web http://hello.app/
+In questo modo, l'applicazione è accessibile da remoto all'indirizzo web http\://hello.app
 ```
 iot@iot-virtual-machine:~$ curl http://hello.app
 Hello, world!
